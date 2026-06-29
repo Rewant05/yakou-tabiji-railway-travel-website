@@ -1,0 +1,56 @@
+.contentContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.prose {
+  color: #e2e8f0;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.prose h2 {
+  font-size: 1.8rem;
+  color: var(--paper-ticket-beige);
+  margin-top: 48px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--muted-teal);
+  padding-bottom: 8px;
+}
+
+.prose h3 {
+  font-size: 1.3rem;
+  color: var(--station-amber);
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.prose p {
+  margin-bottom: 24px;
+}
+
+.lead {
+  font-size: 1.5rem;
+  color: var(--station-amber);
+  font-family: var(--font-display);
+  text-align: center;
+  margin: 48px 0;
+}
+
+.disclaimerBox {
+  background-color: rgba(220, 38, 38, 0.1);
+  border: 1px solid var(--red-stamp);
+  padding: 32px;
+  border-radius: 8px;
+  margin-top: 64px;
+}
+
+.disclaimerBox h3 {
+  color: var(--red-stamp);
+  margin-top: 0;
+}
+
+.disclaimerBox p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}

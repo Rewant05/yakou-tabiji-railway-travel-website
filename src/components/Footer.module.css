@@ -1,0 +1,134 @@
+.footer {
+  background-color: var(--deep-charcoal);
+  color: var(--soft-cream-text);
+  border-top: 4px solid var(--muted-teal);
+  padding: 64px 24px 32px;
+  font-family: var(--font-base);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.brandInfo {
+  max-width: 400px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--station-amber);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--paper-ticket-beige);
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.linksSection {
+  display: flex;
+  gap: 64px;
+}
+
+.linkGroup h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--paper-ticket-beige);
+  position: relative;
+  display: inline-block;
+}
+
+.linkGroup h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--muted-teal);
+}
+
+.linkGroup ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkGroup a {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  transition: color 0.2s;
+}
+
+.linkGroup a:hover {
+  color: var(--station-amber);
+}
+
+.disclaimerSection {
+  background-color: rgba(71, 85, 105, 0.1);
+  border: 1px solid var(--muted-teal);
+  padding: 24px;
+  margin-bottom: 48px;
+  position: relative;
+  border-radius: 4px;
+}
+
+.stamp {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  border: 2px solid var(--red-stamp);
+  color: var(--red-stamp);
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transform: rotate(-10deg);
+  border-radius: 2px;
+  background-color: var(--deep-charcoal);
+}
+
+.disclaimerSection p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.editorialNote {
+  color: var(--station-amber) !important;
+  font-size: 0.85rem !important;
+}
+
+.bottomSection {
+  text-align: center;
+  border-top: 1px solid rgba(71, 85, 105, 0.5);
+  padding-top: 24px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .linksSection {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,89 @@
+.section {
+  padding: 80px 0;
+}
+
+.altBg {
+  background-color: rgba(24, 54, 38, 0.5); /* Slightly lighter dark moss */
+  border-top: 1px dashed var(--muted-teal);
+  border-bottom: 1px dashed var(--muted-teal);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.centerAction {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.outlineBtn {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1px solid var(--station-amber);
+  color: var(--station-amber);
+  border-radius: 24px;
+  transition: all 0.3s;
+}
+
+.outlineBtn:hover {
+  background-color: var(--station-amber);
+  color: var(--midnight-navy);
+}
+
+.itineraryWrapper {
+  max-width: 800px;
+  margin: 48px auto 0;
+}
+
+.ctaSection {
+  background: linear-gradient(to bottom, var(--midnight-navy), var(--deep-charcoal));
+}
+
+.ctaCard {
+  background-color: rgba(245, 158, 11, 0.05);
+  border: 1px solid var(--station-amber);
+  padding: 48px;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaCard h2 {
+  font-size: 1.8rem;
+  color: var(--station-amber);
+  margin-bottom: 16px;
+}
+
+.ctaCard p {
+  color: var(--soft-cream-text);
+  margin-bottom: 32px;
+}
+
+.primaryBtn {
+  display: inline-block;
+  background-color: var(--station-amber);
+  color: var(--midnight-navy);
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+  .ctaCard {
+    padding: 32px 24px;
+  }
+}
