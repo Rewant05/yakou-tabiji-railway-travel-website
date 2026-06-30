@@ -10,6 +10,8 @@
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
   height: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 420px;
 }
 
 .routeCard:hover {
@@ -116,6 +118,8 @@
   position: relative;
   border-top: 8px solid var(--midnight-navy);
   transition: transform 0.3s, box-shadow 0.3s;
+  content-visibility: auto;
+  contain-intrinsic-size: 380px;
 }
 
 .townCard:hover {

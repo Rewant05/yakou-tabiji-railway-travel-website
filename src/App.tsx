@@ -1,15 +1,27 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { RouterProvider, useLocation } from './router';
 import { StationSignNav } from './components/StationSignNav';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Routes as RoutesPage } from './pages/Routes';
-import { StationTowns } from './pages/StationTowns';
-import { Itineraries } from './pages/Itineraries';
-import { Contact } from './pages/Contact';
-import { PrivacyPolicy } from './pages/PrivacyPolicy';
-import { Terms } from './pages/Terms';
+
+const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
+const RoutesPage = lazy(() => import('./pages/Routes').then(module => ({ default: module.Routes })));
+const StationTowns = lazy(() => import('./pages/StationTowns').then(module => ({ default: module.StationTowns })));
+const Itineraries = lazy(() => import('./pages/Itineraries').then(module => ({ default: module.Itineraries })));
+const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy').then(module => ({ default: module.PrivacyPolicy })));
+const Terms = lazy(() => import('./pages/Terms').then(module => ({ default: module.Terms })));
+
+const routeElements: Record<string, React.ReactNode> = {
+  '/': <Home />,
+  '/about': <About />,
+  '/routes': <RoutesPage />,
+  '/station-towns': <StationTowns />,
+  '/itineraries': <Itineraries />,
+  '/contact': <Contact />,
+  '/privacy-policy': <PrivacyPolicy />,
+  '/terms': <Terms />,
+};
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -19,23 +31,21 @@ const ScrollToTop = () => {
   return null;
 };
 
+const AppRoutes: React.FC = () => {
+  const { pathname } = useLocation();
+  return routeElements[pathname] ?? <Home />;
+};
+
 const App: React.FC = () => {
   return (
-    <Router>
+    <RouterProvider>
       <ScrollToTop />
       <StationSignNav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/routes" element={<RoutesPage />} />
-        <Route path="/station-towns" element={<StationTowns />} />
-        <Route path="/itineraries" element={<Itineraries />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<Terms />} />
-      </Routes>
+      <Suspense fallback={<div className="page-wrapper" aria-busy="true" />}>
+        <AppRoutes />
+      </Suspense>
       <Footer />
-    </Router>
+    </RouterProvider>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteData } from '../config/siteData';
+import { stationTowns } from '../config/travelData';
 import { StationTownCard } from '../components/StationTownCard';
 import styles from './Home.module.css';
 
@@ -13,8 +13,8 @@ export const StationTowns: React.FC = () => {
         </p>
         
         <div className={styles.grid}>
-          {siteData.stationTowns.map(town => (
-            <StationTownCard key={town.id} {...town} />
+          {stationTowns.map((town, index) => (
+            <StationTownCard key={town.id} {...town} priority={index < 3} />
           ))}
         </div>
       </div>

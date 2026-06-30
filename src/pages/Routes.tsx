@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteData } from '../config/siteData';
+import { routes } from '../config/travelData';
 import { RouteCard } from '../components/RouteCard';
 import styles from './Home.module.css';
 
@@ -13,8 +13,8 @@ export const Routes: React.FC = () => {
         </p>
         
         <div className={styles.grid}>
-          {siteData.routes.map(route => (
-            <RouteCard key={route.id} {...route} />
+          {routes.map((route, index) => (
+            <RouteCard key={route.id} {...route} priority={index < 3} />
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteData } from '../config/siteData';
+import { siteMeta } from '../config/siteMeta';
 import styles from './Contact.module.css';
 
 export const Contact: React.FC = () => {
@@ -15,17 +15,17 @@ export const Contact: React.FC = () => {
             
             <div className={styles.infoBlock}>
               <h3>メールアドレス</h3>
-              <p><a href={`mailto:${siteData.email}`}>{siteData.email}</a></p>
+              <p><a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a></p>
             </div>
             
             <div className={styles.infoBlock}>
               <h3>営業時間</h3>
-              <p>{siteData.businessHours}</p>
+              <p>{siteMeta.businessHours}</p>
             </div>
             
             <div className={styles.infoBlock}>
               <h3>所在地</h3>
-              <p>{siteData.address}</p>
+              <p>{siteMeta.address}</p>
             </div>
           </div>
 

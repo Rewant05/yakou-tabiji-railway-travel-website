@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Cards.module.css';
+import { ResponsiveCardImage } from './ResponsiveCardImage';
 
 interface StationTownCardProps {
   id: string;
@@ -8,6 +9,7 @@ interface StationTownCardProps {
   stationAtmosphere: string;
   shortDescription: string;
   imageUrl?: string;
+  priority?: boolean;
 }
 
 export const StationTownCard: React.FC<StationTownCardProps> = ({
@@ -15,13 +17,14 @@ export const StationTownCard: React.FC<StationTownCardProps> = ({
   region,
   stationAtmosphere,
   shortDescription,
-  imageUrl
+  imageUrl,
+  priority = false
 }) => {
   return (
     <div className={styles.townCard}>
       {imageUrl && (
         <div className={styles.cardImageContainer}>
-          <img src={imageUrl} alt={name} className={styles.cardImage} />
+          <ResponsiveCardImage imageUrl={imageUrl} alt={name} priority={priority} />
         </div>
       )}
       <div className={styles.townHeader}>

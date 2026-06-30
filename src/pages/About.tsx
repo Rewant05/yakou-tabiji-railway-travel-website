@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteData } from '../config/siteData';
+import { siteMeta } from '../config/siteMeta';
 import styles from './Page.module.css';
 
 export const About: React.FC = () => {
@@ -15,7 +15,7 @@ export const About: React.FC = () => {
           
           <h2>独立した編集型旅ガイド</h2>
           <p>
-            {siteData.websiteName}は、日本の国内鉄道旅行、特に夜行列車やローカル線、そして魅力的な駅町を紹介する独立編集型のウェブメディアです。私たちは、単なる移動手段としての鉄道ではなく、「乗ること自体が目的となる旅」の美しさを伝えます。
+            {siteMeta.websiteName}は、日本の国内鉄道旅行、特に夜行列車やローカル線、そして魅力的な駅町を紹介する独立編集型のウェブメディアです。私たちは、単なる移動手段としての鉄道ではなく、「乗ること自体が目的となる旅」の美しさを伝えます。
           </p>
 
           <h2>スロートラベルの価値</h2>
@@ -36,7 +36,7 @@ export const About: React.FC = () => {
           <div className={styles.disclaimerBox}>
             <h3>【重要】当サイトの立ち位置について</h3>
             <p>
-              {siteData.websiteName}は、独立した編集に基づくトラベルガイドであり、公式の鉄道会社、宿泊予約プラットフォーム、または政府・自治体の観光局とは一切関係がありません。<br />
+              {siteMeta.websiteName}は、独立した編集に基づくトラベルガイドであり、公式の鉄道会社、宿泊予約プラットフォーム、または政府・自治体の観光局とは一切関係がありません。<br />
               当サイト内で列車の予約やチケットの購入を行うことはできません。実際の旅行計画やチケットの手配にあたっては、各鉄道会社や旅行会社の公式情報を必ずご確認ください。
             </p>
           </div>

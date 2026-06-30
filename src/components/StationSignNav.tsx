@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { siteData } from '../config/siteData';
-import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from '../router';
+import { siteMeta } from '../config/siteMeta';
 import styles from './StationSignNav.module.css';
 
 export const StationSignNav: React.FC = () => {
@@ -17,11 +16,11 @@ export const StationSignNav: React.FC = () => {
         <div className={styles.navContainer}>
           <Link to="/" className={styles.logo} onClick={closeMenu}>
             <span className={styles.logoIcon}></span>
-            {siteData.websiteName}
+            {siteMeta.websiteName}
           </Link>
 
           <div className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
-            {siteData.navLinks.map((link) => (
+            {siteMeta.navLinks.map((link) => (
               <Link 
                 key={link.path} 
                 to={link.path} 
@@ -39,7 +38,7 @@ export const StationSignNav: React.FC = () => {
           </div>
 
           <button className={styles.mobileMenuBtn} onClick={toggleMenu} aria-label="Menu">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className={`${styles.menuGlyph} ${isOpen ? styles.closeGlyph : ''}`} aria-hidden="true"></span>
           </button>
         </div>
       </nav>

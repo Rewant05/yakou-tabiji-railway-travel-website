@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Cards.module.css';
-import { Link } from 'react-router-dom';
+import { Link } from '../router';
+import { ResponsiveCardImage } from './ResponsiveCardImage';
 
 interface RouteCardProps {
   id: string;
@@ -9,8 +10,9 @@ interface RouteCardProps {
   travelMood: string;
   recommendedSeason: string;
   duration: string;
-  highlights: string[];
+  highlights: readonly string[];
   imageUrl?: string;
+  priority?: boolean;
 }
 
 export const RouteCard: React.FC<RouteCardProps> = ({
@@ -20,13 +22,14 @@ export const RouteCard: React.FC<RouteCardProps> = ({
   recommendedSeason,
   duration,
   highlights,
-  imageUrl
+  imageUrl,
+  priority = false
 }) => {
   return (
     <Link to={`/routes`} className={styles.routeCard}>
       {imageUrl && (
         <div className={styles.cardImageContainer}>
-          <img src={imageUrl} alt={title} className={styles.cardImage} />
+          <ResponsiveCardImage imageUrl={imageUrl} alt={title} priority={priority} />
         </div>
       )}
       <div className={styles.cardHeader}>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { siteData } from '../config/siteData';
+import { privacyPolicy } from '../config/legalData';
+import { siteMeta } from '../config/siteMeta';
 import styles from './Page.module.css';
 
 export const PrivacyPolicy: React.FC = () => {
@@ -10,10 +11,10 @@ export const PrivacyPolicy: React.FC = () => {
         
         <div className={styles.prose}>
           <p>
-            {siteData.companyName}（以下「当サイト」）は、以下のとおりプライバシーポリシーを定めます。
+            {siteMeta.companyName}（以下「当サイト」）は、以下のとおりプライバシーポリシーを定めます。
           </p>
           
-          {siteData.privacyPolicy.map((section, index) => (
+          {privacyPolicy.map((section, index) => (
             <div key={index}>
               <h2>{section.title}</h2>
               <p>{section.content}</p>

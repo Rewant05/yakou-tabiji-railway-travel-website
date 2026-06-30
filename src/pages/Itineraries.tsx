@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteData } from '../config/siteData';
+import { itineraries } from '../config/travelData';
 import { ItineraryTimeline } from '../components/ItineraryTimeline';
 
 export const Itineraries: React.FC = () => {
@@ -12,7 +12,7 @@ export const Itineraries: React.FC = () => {
         </p>
         
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          {siteData.itineraries.map(itinerary => (
+          {itineraries.map(itinerary => (
             <ItineraryTimeline key={itinerary.id} {...itinerary} />
           ))}
         </div>

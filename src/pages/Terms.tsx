@@ -1,5 +1,6 @@
 import React from 'react';
-import { siteData } from '../config/siteData';
+import { termsAndConditions } from '../config/legalData';
+import { siteMeta } from '../config/siteMeta';
 import styles from './Page.module.css';
 
 export const Terms: React.FC = () => {
@@ -10,10 +11,10 @@ export const Terms: React.FC = () => {
         
         <div className={styles.prose}>
           <p>
-            この利用規約は、{siteData.companyName}が提供する当サイトの利用条件を定めるものです。
+            この利用規約は、{siteMeta.companyName}が提供する当サイトの利用条件を定めるものです。
           </p>
           
-          {siteData.termsAndConditions.map((section, index) => (
+          {termsAndConditions.map((section, index) => (
             <div key={index}>
               <h2>{section.title}</h2>
               <p>{section.content}</p>

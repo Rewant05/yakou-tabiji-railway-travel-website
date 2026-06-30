@@ -1,11 +1,11 @@
 import React from 'react';
 import { DepartureBoardHero } from '../components/DepartureBoardHero';
-import { siteData } from '../config/siteData';
+import { featuredItineraries, featuredRoutes, featuredStationTowns } from '../config/homeData';
 import { RouteCard } from '../components/RouteCard';
 import { StationTownCard } from '../components/StationTownCard';
 import { ItineraryTimeline } from '../components/ItineraryTimeline';
 import styles from './Home.module.css';
-import { Link } from 'react-router-dom';
+import { Link } from '../router';
 
 export const Home: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
           <div className="container">
             <h2 className="section-title">路線の旅</h2>
             <div className={styles.grid}>
-              {siteData.routes.slice(0, 3).map(route => (
+              {featuredRoutes.map(route => (
                 <RouteCard key={route.id} {...route} />
               ))}
             </div>
@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
           <div className="container">
             <h2 className="section-title">駅町ガイド</h2>
             <div className={styles.grid}>
-              {siteData.stationTowns.slice(0, 3).map(town => (
+              {featuredStationTowns.map(town => (
                 <StationTownCard key={town.id} {...town} />
               ))}
             </div>
@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
           <div className="container">
             <h2 className="section-title">モデルコース</h2>
             <div className={styles.itineraryWrapper}>
-              {siteData.itineraries.slice(0, 2).map(itinerary => (
+              {featuredItineraries.map(itinerary => (
                 <ItineraryTimeline key={itinerary.id} {...itinerary} />
               ))}
             </div>

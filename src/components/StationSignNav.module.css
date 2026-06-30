@@ -103,6 +103,52 @@
   border: none;
   color: var(--soft-cream-text);
   cursor: pointer;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuGlyph,
+.menuGlyph::before,
+.menuGlyph::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.menuGlyph {
+  position: relative;
+}
+
+.menuGlyph::before,
+.menuGlyph::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menuGlyph::before {
+  top: -7px;
+}
+
+.menuGlyph::after {
+  top: 7px;
+}
+
+.closeGlyph {
+  background-color: transparent;
+}
+
+.closeGlyph::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.closeGlyph::after {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .overlay {
@@ -111,14 +157,14 @@
 
 @media (max-width: 768px) {
   .mobileMenuBtn {
-    display: block;
+    display: inline-flex;
     z-index: 101;
   }
   
   .navLinks {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 280px;
     height: 100vh;
     background-color: var(--deep-charcoal);
@@ -126,13 +172,15 @@
     padding-top: 100px;
     align-items: flex-start;
     padding-left: 40px;
-    transition: right 0.3s ease-in-out;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
     z-index: 100;
     border-left: 1px solid var(--muted-teal);
+    will-change: transform;
   }
 
   .navLinks.open {
-    right: 0;
+    transform: translateX(0);
   }
 
   .overlay {

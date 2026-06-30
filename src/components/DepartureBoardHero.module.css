@@ -133,6 +133,7 @@
   display: flex;
   align-items: flex-end;
   animation: moveLandscape 30s linear infinite;
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -322,6 +323,22 @@
 }
 
 @media (max-width: 768px) {
+  .heroSection {
+    min-height: auto;
+    padding: 104px 0 56px;
+  }
+  .heroContent {
+    gap: 28px;
+  }
+  .departureBoard,
+  .trainWindowFrame {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  }
+  .movingLandscape,
+  .line::after,
+  .dot:last-child {
+    animation: none;
+  }
   .boardRow {
     font-size: 1.1rem;
     gap: 12px;
