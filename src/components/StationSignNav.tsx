@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from '../router';
 import { siteMeta } from '../config/siteMeta';
 import styles from './StationSignNav.module.css';
@@ -9,6 +9,24 @@ export const StationSignNav: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const closeMenuOnScroll = () => setIsOpen(false);
+
+    window.addEventListener('scroll', closeMenuOnScroll, { passive: true });
+    window.addEventListener('wheel', closeMenuOnScroll, { passive: true });
+    window.addEventListener('touchmove', closeMenuOnScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', closeMenuOnScroll);
+      window.removeEventListener('wheel', closeMenuOnScroll);
+      window.removeEventListener('touchmove', closeMenuOnScroll);
+    };
+  }, [isOpen]);
 
   return (
     <>
